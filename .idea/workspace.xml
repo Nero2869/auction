@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="45dd5d55-d94c-41df-abb4-8944999364f8" name="Default" comment="" />
+    <list default="true" id="45dd5d55-d94c-41df-abb4-8944999364f8" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/Auction/details.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Auction/details.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/Auction/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/Auction/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AuctionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AuctionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Offer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Offer.php" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,58 +20,38 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="AuctionController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AuctionController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AuctionController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-867">
-              <caret line="55" column="57" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
+            <state relative-caret-position="717">
+              <caret line="167" column="77" selection-start-line="167" selection-start-column="77" selection-end-line="167" selection-end-column="77" />
               <folding>
                 <element signature="e#42#73#0#PHP" expanded="true" />
                 <element signature="e#879#904#0#PHP" expanded="true" />
-                <element signature="e#1430#1446#1#PHP" expanded="true" />
+                <element signature="e#1067#1095#1#PHP" expanded="true" />
                 <element signature="e#1253#1280#0#PHP" expanded="true" />
                 <element signature="e#1898#1921#0#PHP" expanded="true" />
                 <element signature="e#2367#2391#0#PHP" expanded="true" />
+                <element signature="e#5323#5359#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="add.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/Auction/add.html.twig">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/Auction/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="540">
+              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="details.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/views/Auction/details.html.twig">
+      <file leaf-file-name="finishedAuctions.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/Auction/finishedAuctions.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
-              <caret line="36" selection-start-line="36" selection-end-line="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Offer.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Offer.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="177" column="22" selection-start-line="177" selection-start-column="22" selection-end-line="177" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Auction.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Auction.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3309">
-              <caret line="257" column="36" selection-start-line="257" selection-start-column="36" selection-end-line="257" selection-end-column="36" />
-              <folding>
-                <element signature="e#36#84#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="324">
+              <caret line="18" column="107" selection-start-line="18" selection-start-column="107" selection-end-line="18" selection-end-column="107" />
             </state>
           </provider>
         </entry>
@@ -73,8 +59,23 @@
       <file leaf-file-name="base.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="18" column="104" selection-start-line="18" selection-start-column="104" selection-end-line="18" selection-end-column="104" />
+            <state relative-caret-position="342">
+              <caret line="19" column="86" selection-start-line="19" selection-start-column="86" selection-end-line="19" selection-end-column="86" />
+              <folding>
+                <element signature="e#894#915#0#Twig" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Offer.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Offer.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2463">
+              <caret line="187" column="5" selection-start-line="187" selection-start-column="5" selection-end-line="187" selection-end-column="5" />
+              <folding>
+                <element signature="e#36#68#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -92,16 +93,19 @@
         <option value="$PROJECT_DIR$/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/.bowerrc" />
         <option value="$PROJECT_DIR$/app/Resources/views/Auction/add.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/Auction/index.html.twig" />
         <option value="$PROJECT_DIR$/app/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/AuctionType.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
         <option value="$PROJECT_DIR$/app/AppKernel.php" />
         <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AuctionController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/Auction/details.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Offer.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Auction.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Offer.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/OfferController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/Auction/finished.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AuctionController.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/Auction/finishedAuctions.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/Auction/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/Auction/details.html.twig" />
       </list>
     </option>
   </component>
@@ -293,12 +297,12 @@
       <option name="presentableId" value="Default" />
       <updated>1523955882435</updated>
       <workItem from="1523955884753" duration="9704000" />
-      <workItem from="1524294310495" duration="16548000" />
+      <workItem from="1524294310495" duration="21338000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26252000" />
+    <option name="totallyTimeSpent" value="31042000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-4" width="1920" height="1021" extended-state="6" />
@@ -331,6 +335,11 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AuctionController.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -339,10 +348,11 @@
           <folding>
             <element signature="e#42#73#0#PHP" expanded="true" />
             <element signature="e#879#904#0#PHP" expanded="true" />
-            <element signature="e#1430#1446#1#PHP" expanded="true" />
+            <element signature="e#1067#1095#1#PHP" expanded="true" />
             <element signature="e#1253#1280#0#PHP" expanded="true" />
             <element signature="e#1898#1921#0#PHP" expanded="true" />
             <element signature="e#2367#2391#0#PHP" expanded="true" />
+            <element signature="e#5323#5359#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -417,20 +427,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/Auction/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="18" column="104" selection-start-line="18" selection-start-column="104" selection-end-line="18" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="663">
@@ -462,41 +458,86 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AuctionController.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Offer.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-867">
-          <caret line="55" column="57" selection-start-line="55" selection-start-column="57" selection-end-line="55" selection-end-column="57" />
+        <state relative-caret-position="2463">
+          <caret line="187" column="5" selection-start-line="187" selection-start-column="5" selection-end-line="187" selection-end-column="5" />
           <folding>
-            <element signature="e#42#73#0#PHP" expanded="true" />
-            <element signature="e#879#904#0#PHP" expanded="true" />
-            <element signature="e#1430#1446#1#PHP" expanded="true" />
-            <element signature="e#1253#1280#0#PHP" expanded="true" />
-            <element signature="e#1898#1921#0#PHP" expanded="true" />
-            <element signature="e#2367#2391#0#PHP" expanded="true" />
+            <element signature="e#36#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Auction.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1026">
+          <caret line="69" column="7" selection-start-line="69" selection-start-column="7" selection-end-line="69" selection-end-column="40" />
+          <folding>
+            <element signature="e#36#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/OfferController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="558">
+          <caret line="31" column="6" selection-start-line="31" selection-start-column="6" selection-end-line="31" selection-end-column="6" />
+          <folding>
+            <element signature="e#42#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Auction/finished.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="65" selection-start-line="14" selection-start-column="65" selection-end-line="14" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="19" column="86" selection-start-line="19" selection-start-column="86" selection-end-line="19" selection-end-column="86" />
+          <folding>
+            <element signature="e#894#915#0#Twig" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/Auction/details.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="252">
+          <caret line="14" column="100" selection-start-line="14" selection-start-column="100" selection-end-line="14" selection-end-column="100" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Offer.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Auction/finishedAuctions.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="177" column="22" selection-start-line="177" selection-start-column="22" selection-end-line="177" selection-end-column="22" />
+        <state relative-caret-position="324">
+          <caret line="18" column="107" selection-start-line="18" selection-start-column="107" selection-end-line="18" selection-end-column="107" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Auction.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/Auction/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3309">
-          <caret line="257" column="36" selection-start-line="257" selection-start-column="36" selection-end-line="257" selection-end-column="36" />
+        <state relative-caret-position="540">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AuctionController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="717">
+          <caret line="167" column="77" selection-start-line="167" selection-start-column="77" selection-end-line="167" selection-end-column="77" />
           <folding>
-            <element signature="e#36#84#0#PHP" expanded="true" />
+            <element signature="e#42#73#0#PHP" expanded="true" />
+            <element signature="e#879#904#0#PHP" expanded="true" />
+            <element signature="e#1067#1095#1#PHP" expanded="true" />
+            <element signature="e#1253#1280#0#PHP" expanded="true" />
+            <element signature="e#1898#1921#0#PHP" expanded="true" />
+            <element signature="e#2367#2391#0#PHP" expanded="true" />
+            <element signature="e#5323#5359#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>

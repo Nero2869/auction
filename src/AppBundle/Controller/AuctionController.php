@@ -23,7 +23,7 @@ class AuctionController extends Controller
 
         $entityManager = $this->getDoctrine()->getManager();
 
-        $auctions = $entityManager->getRepository(Auction::class)->findAll();
+        $auctions = $entityManager->getRepository(Auction::class)->findBy(["status" => Auction::STATUS_ACTIVE]);
 
        return $this->render("Auction/index.html.twig",["auctions" => $auctions]);
     }
@@ -35,6 +35,10 @@ class AuctionController extends Controller
      * @return Response
      */
     public function detailsAction(Auction $auction){
+
+        if($auction->getStatus() === Auction::STATUS_FINISHED){
+            return $this->render("Auction/finished.html.twig", ["details"=>$auction]);
+        }
 
         $formDelete = $this->createFormBuilder()
                             ->add("submit", SubmitType::class, ["label" => "Usuń"])
@@ -48,12 +52,19 @@ class AuctionController extends Controller
                             ->add("submit", SubmitType::class, ["label" => "Zakończ"])
                             ->getForm();
 
+        $buyForm = $this->createFormBuilder()
+                        ->setAction($this->generateUrl("offer_buy", ["id" => $auction->getId()]))
+                        ->setMethod(Request::METHOD_POST)
+                        ->add("submit", SubmitType::class, ["label" => "Kup Teraz"])
+                        ->getForm();
+
         return $this->render(
             "Auction/details.html.twig",
             [
                 "details" => $auction,
                 "deleteForm" => $formDelete->createView(),
-                "finishForm" => $finishForm->createView()
+                "finishForm" => $finishForm->createView(),
+                "buyForm" => $buyForm->createView()
             ]
         );
     }
@@ -142,5 +153,18 @@ class AuctionController extends Controller
         $entityManager->flush();
 
         return $this->redirectToRoute("auction_details", ["id"=>$auction->getId()]);
+    }
+
+    /**
+     * @Route("/auction/finished", name="auction_finished_list")
+     * @return Response
+     */
+    public function finishedAuctionsAction(){
+
+        $entityManager = $this->getDoctrine()->getManager();
+
+        $auctions = $entityManager->getRepository(Auction::class)->findBy(["status"=>Auction::STATUS_FINISHED]);
+
+        return $this->render("Auction/finishedAuctions.html.twig", ["auctions" => $auctions]);
     }
 }

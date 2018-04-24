@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="panel panel-success">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><h2>{{ details.title }}</h2></div>
+        <div class="panel-body">
+            <h4>{{ details.description }}</h4>
+        </div>
+
+        <!-- List group -->
+        <ul class="list-group">
+            <li class="list-group-item"><b>Cena Kup Teraz:</b> {{ details.price }}PLN</li>
+            <li class="list-group-item"><b>Cena wywoławcza:</b> {{ details.startingPrice }}PLN</li>
+            <li class="list-group-item"><b>Aukcja zakończyła się:</b> {{ details.expiresAt | date("Y:m:d H:i:s") }}</li>
+        </ul>
+    </div>
+
+    <a class="btn btn-large btn-default pull-left" href="{{ url('auction_index') }}">Powrót</a>
+
+{% endblock %}
+
+
