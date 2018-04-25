@@ -21,7 +21,11 @@ class AuctionType extends AbstractType
             ->add("description", TextareaType::class, ["label"=>"Opis"])
             ->add("price", NumberType::class, ["label"=>"Cena"])
             ->add("startingPrice", NumberType::class, ["label"=>"Cena wywoławcza"])
-            ->add("expiresAt", \Symfony\Component\Form\Extension\Core\Type\DateTimeType::class, ["label"=>"Data zakończenia"])
+            ->add("expiresAt",
+                \Symfony\Component\Form\Extension\Core\Type\DateTimeType::class,
+                ["label"=>"Data zakończenia",
+                    "data" => new \DateTime("+1 day + 10 minutes")]
+                )
             ->add("submit", SubmitType::class, ["label"=>"Zapisz"]);
     }
 

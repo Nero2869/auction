@@ -16,6 +16,18 @@
         </ul>
     </div>
 
+    <hr>
+
+    <div class="panel panel-default">
+        <ul class="list-group">
+            {% for offer in details.offers %}
+                <li class="list-group-item">Oferta: {{ offer.price }} | Złożona: {{ offer.createdAt| date("Y-m-d H:i:s") }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <hr>
+
     <a class="btn btn-large btn-default pull-left" href="{{ url('auction_index') }}">Powrót</a>
     <a class="btn btn-large btn-info pull-left" href="{{ url('auction_edit', {"id":details.id}) }}">Edytuj</a>
 
@@ -37,6 +49,8 @@
 
 
         <div class="clearfix"></div>
+
+    {{ form(bidForm, {"attr": {"novalidate": "novalidate"}}) }}
 
 {% endblock %}
 

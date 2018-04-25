@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Auction
@@ -31,6 +32,18 @@ class Auction
      * @var string
      *
      * @ORM\Column(name="title", type="string", length=255)
+     *
+     * @Assert\NotBlank(
+     *     message="To pole nie może być puste"
+     * )
+     *
+     * @Assert\Length(
+     *     min=3,
+     *     max=255,
+     *     minMessage="Tytuł musi mieć przynajmniej 3 znaki",
+     *     maxMessage="Tytuł nie może być dłuższy niż 255 znaków"
+     * )
+     *
      */
     private $title;
 
@@ -38,6 +51,15 @@ class Auction
      * @var string
      *
      * @ORM\Column(name="description", type="text")
+     *
+     * @Assert\NotBlank(
+     *     message="Opis nie może być pusty"
+     * )
+     *
+     * @Assert\Length(
+     *     min=10,
+     *     minMessage="Opis nie może być krótszy niż 10 znaków"
+     * )
      */
     private $description;
 
@@ -45,11 +67,29 @@ class Auction
      * @var float
      *
      * @ORM\Column(name="price", type="decimal", precision=10, scale=2)
+     *
+     * @Assert\NotBlank(
+     *     message="Cena nie może być pusta"
+     * )
+     *
+     * @Assert\GreaterThan(
+     *     value="0",
+     *      message="Cena być większa od 0"
+     * )
      */
     private $price;
 
     /**
      * @ORM\Column(name="starting_price", type="decimal", precision=10, scale=2)
+     *
+     * @Assert\NotBlank(
+     *     message="Cena wywoławcza nie może być pusta"
+     * )
+     *
+     * @Assert\GreaterThan(
+     *     value="0",
+     *      message="Cena wywoławcza być większa od 0"
+     * )
      *
      * @var float
      *
@@ -75,6 +115,15 @@ class Auction
 
     /**
      * @ORM\Column(name="expires_at", type="datetime")
+     *
+     * @Assert\NotBlank(
+     *     message="Musisz podac datę zakończenia aukcji"
+     * )
+     *
+     * @Assert\GreaterThan(
+     *     value="+1 day",
+     *     message="Aukcja nie moze kończyć się za mniej niż 24h"
+     * )
      *
      * @var \DateTime
      */

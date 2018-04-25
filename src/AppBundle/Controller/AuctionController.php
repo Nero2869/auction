@@ -5,8 +5,10 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Form\AuctionType;
+use AppBundle\Form\BidType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\FormError;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -58,13 +60,20 @@ class AuctionController extends Controller
                         ->add("submit", SubmitType::class, ["label" => "Kup Teraz"])
                         ->getForm();
 
+        $bidForm = $this->createForm(
+                            BidType::class,
+                            null,
+                            ["action" => $this->generateUrl("offer_bid", ["id" => $auction->getId()])]
+                        );
+
         return $this->render(
             "Auction/details.html.twig",
             [
                 "details" => $auction,
                 "deleteForm" => $formDelete->createView(),
                 "finishForm" => $finishForm->createView(),
-                "buyForm" => $buyForm->createView()
+                "buyForm" => $buyForm->createView(),
+                "bidForm" => $bidForm->createView()
             ]
         );
     }
@@ -84,15 +93,25 @@ class AuctionController extends Controller
         if($request->isMethod("post")){
             $form->handleRequest($request);
 
-            $auction->setStatus(Auction::STATUS_ACTIVE);
+            if($auction->getStartingPrice() >= $auction->getPrice()){
+                $form->get("startingPrice")->addError(new FormError("Cena wywoławcza nie może być wyższa od ceny kup teraz"));
+            }
 
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($auction);
-            $entityManager->flush();
+            if($form->isValid()){
+                $auction->setStatus(Auction::STATUS_ACTIVE);
 
-            return $this->redirectToRoute("auction_details", ["id" => $auction->getId()]);
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($auction);
+                $entityManager->flush();
+
+                $this->addFlash("success", "Aukcja {$auction->getTitle()} została pomyślnie dodana.");
+
+                return $this->redirectToRoute("auction_details", ["id" => $auction->getId()]);
+            }
+            else{
+                $this->addFlash("error", "Nie udało się dodać aukcji.");
+            }
         }
-
         return $this->render("Auction/add.html.twig", ["form"=>$form->createView()]);
     }
 
@@ -115,6 +134,8 @@ class AuctionController extends Controller
             $entityManager->persist($auction);
             $entityManager->flush();
 
+            $this->addFlash("success","Aukcja {$auction->getTitle()} została pomyślnie zmodyfikowana.");
+
             return $this->redirectToRoute("auction_details", ["id"=>$auction->getId()]);
         }
 
@@ -134,6 +155,8 @@ class AuctionController extends Controller
         $entityManager->remove($auction);
         $entityManager->flush();
 
+        $this->addFlash("success", "Aukcja {$auction->getTitle()} została usunięta.");
+
         return $this->redirectToRoute("auction_index");
     }
 
@@ -151,6 +174,8 @@ class AuctionController extends Controller
         $entityManager = $this->getDoctrine()->getManager();
         $entityManager->persist($auction);
         $entityManager->flush();
+
+        $this->addFlash("success", "Aukcja {$auction->getTitle()} została zakończona.");
 
         return $this->redirectToRoute("auction_details", ["id"=>$auction->getId()]);
     }
