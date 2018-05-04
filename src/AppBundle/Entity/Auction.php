@@ -151,6 +151,13 @@ class Auction
         $this->offers = new ArrayCollection();
     }
 
+    /**
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="auctions")
+     *
+     * @var User
+     */
+    private $owner;
+
 // ********************************************** GETTERY SETTERY ************************************************
 
     /**
@@ -336,6 +343,22 @@ class Auction
         $this->offers[] = $offer;
 
         return $this;
+    }
+
+    /**
+     * @param User $owner
+     * @return $this
+     */
+    public function setOwner(User $owner){
+        $this->owner = $owner;
+        return $this;
+    }
+
+    /**
+     * @return User
+     */
+    public function getOwner(){
+        return $this->owner;
     }
 }
 

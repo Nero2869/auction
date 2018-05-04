@@ -28,26 +28,22 @@
 
     <hr>
 
-    <a class="btn btn-large btn-default pull-left" href="{{ url('auction_index') }}">Powrót</a>
+    <a class="btn btn-large btn-default pull-left" href="{{ url('my_auction_index') }}">Powrót</a>
+    <a class="btn btn-large btn-info pull-left" href="{{ url('my_auction_edit', {"id":details.id}) }}">Edytuj</a>
 
-    {% if is_granted("ROLE_USER") %}
-        {{ form_start(buyForm, {"attr": {"class": "pull-left"}}) }}
-            {{ form_widget(buyForm.submit, {"attr": {"class": "btn-success"}}) }}
-            {{ form_rest(buyForm) }}
-        {{ form_end(buyForm) }}
-    {% endif %}
+    {{ form_start(deleteForm, {"attr": {"class": "pull-left"}}) }}
+        {{ form_widget(deleteForm.submit, {"attr": {"class": "btn-danger"}}) }}
+        {{ form_rest(deleteForm) }}
+    {{ form_end(deleteForm) }}
 
+    {{ form_start(finishForm, {"attr": {"class": "pull-left"}}) }}
+        {{ form_widget(finishForm.submit, {"attr": {"class": "btn-warning"}}) }}
+        {{ form_rest(finishForm) }}
+    {{ form_end(finishForm) }}
 
 
         <div class="clearfix"></div>
 
-    {% if is_granted("ROLE_USER") %}
-        {{ form(bidForm, {"attr": {"novalidate": "novalidate"}}) }}
-    {% endif %}
-
-    {% if not is_granted("ROLE_USER") %}
-        <h4>Żeby kupować musisz się zalogować ! :) </h4>
-    {% endif %}
 {% endblock %}
 
 

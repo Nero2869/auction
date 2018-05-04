@@ -22,10 +22,13 @@ class OfferController extends Controller
      */
     public function buyAction(Auction $auction){
 
+        $this->denyAccessUnlessGranted("ROLE_USER");
+
         $offer = new Offer();
 
         $offer
                 ->setAuction($auction)
+                ->setOwner($this->getUser())
                 ->setPrice($auction->getPrice())
                 ->setType(Offer::TYPE_BUY);
 
@@ -52,6 +55,8 @@ class OfferController extends Controller
      */
     public function bidAction(Request $request, Auction $auction){
 
+        $this->denyAccessUnlessGranted("ROLE_USER");
+
         $offer = new Offer();
         $bidForm = $this->createForm(BidType::class, $offer);
 
@@ -77,7 +82,8 @@ class OfferController extends Controller
 
             $offer
                 ->setType(Offer::TYPE_AUCTION)
-                ->setAuction($auction);
+                ->setAuction($auction)
+                ->setOwner($this->getUser());
 
 
             $entityManager->persist($offer);
