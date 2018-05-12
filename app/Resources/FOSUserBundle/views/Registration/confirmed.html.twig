@@ -1,0 +1,11 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    <h3>Rejestracja udana</h3>
+
+    <p>Dodaj swoją pierwszą aukcję -> <a class="btn btn-default" href="{{ url('my_auction_add') }}">kliknij</a></p>
+    <p>wyświetl wszystkie aukcje -><a class="btn btn-default" href="{{ url('auction_index') }}">kliknij</a></p>
+
+{% endblock fos_user_content %}

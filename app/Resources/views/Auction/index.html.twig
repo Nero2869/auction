@@ -5,7 +5,7 @@
 
     {% for auction in auctions %}
 
-        <div class="panel panel-default">
+        <div class="panel {{ styleAuction(auction.expiresAt) }}">
             <!-- Default panel contents -->
             <div class="panel-heading"><h2><a href="{{ url('auction_details', {"id": auction.id}) }}">{{ auction.title }}</a></h2></div>
             <div class="panel-body">
@@ -16,7 +16,7 @@
             <ul class="list-group">
                 <li class="list-group-item"><b>Cena Kup Teraz:</b> {{ auction.price }}PLN</li>
                 <li class="list-group-item"><b>Cena wywoławcza:</b> {{ auction.startingPrice }}PLN</li>
-                <li class="list-group-item"><b>Aukcja kończy się:</b> {{ auction.expiresAt | date("Y-m-d H:i:s") }}</li>
+                <li class="list-group-item"><b>Aukcja kończy się:</b> {{ auction.expiresAt | expireDate }}</li>
             </ul>
         </div>
     {% else %}

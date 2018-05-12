@@ -12,7 +12,7 @@
         <ul class="list-group">
             <li class="list-group-item"><b>Cena Kup Teraz:</b> {{ details.price }}PLN</li>
             <li class="list-group-item"><b>Cena wywoławcza:</b> {{ details.startingPrice }}PLN</li>
-            <li class="list-group-item"><b>Aukcja kończy się:</b> {{ details.expiresAt | date("Y-m-d H:i:s") }}</li>
+            <li class="list-group-item"><b>Aukcja kończy się:</b> {{ details.expiresAt | expireDate }}</li>
         </ul>
     </div>
 
@@ -26,24 +26,34 @@
         </ul>
     </div>
 
+    {% if is_granted("ROLE_USER") %}
+        <div class="panel panel-success">
+            <div class="panel-body">
+                {{ form_start(buyForm, {"attr": {"class": "pull-left" , "style": "padding: 10px"}}) }}
+                    {{ form_widget(buyForm.submit, {"attr": {"class": "btn-success"}}) }}
+                    {{ form_rest(buyForm) }}
+                {{ form_end(buyForm) }}
+
+                <div class="input-group">
+                    {{ form_start(bidForm, {"attr": {"novalidate": "novalidate", "style": "padding: 10px"}}) }}
+                       <div class="input-group">
+                           {{ form_widget(bidForm.price, {"attr": {"placeholder": "Cena do licytacji..."}}) }}
+                            <span class="input-group-btn">
+                                {{ form_widget(bidForm.submit) }}
+                            </span>
+                       </div>
+                        {{ form_rest(bidForm) }}
+                    {{ form_end(bidForm) }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    <div class="clear-fix"></div>
+
     <hr>
 
     <a class="btn btn-large btn-default pull-left" href="{{ url('auction_index') }}">Powrót</a>
-
-    {% if is_granted("ROLE_USER") %}
-        {{ form_start(buyForm, {"attr": {"class": "pull-left"}}) }}
-            {{ form_widget(buyForm.submit, {"attr": {"class": "btn-success"}}) }}
-            {{ form_rest(buyForm) }}
-        {{ form_end(buyForm) }}
-    {% endif %}
-
-
-
-        <div class="clearfix"></div>
-
-    {% if is_granted("ROLE_USER") %}
-        {{ form(bidForm, {"attr": {"novalidate": "novalidate"}}) }}
-    {% endif %}
 
     {% if not is_granted("ROLE_USER") %}
         <h4>Żeby kupować musisz się zalogować ! :) </h4>
