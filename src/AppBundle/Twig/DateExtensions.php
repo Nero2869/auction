@@ -31,17 +31,20 @@ class DateExtensions extends Twig_Extension
      * @param \DateTime $expiresAt
      * @return string
      */
-    public function expireDate(\DateTime $expiresAt){
+    function expireDate(\DateTime $expiresAt){
 
-        if($expiresAt < new \DateTime("-7 days")){
+        if($expiresAt > new \DateTime("+1 month")){
             return $expiresAt->format("Y-m-d H:i");
         }
 
-        if($expiresAt > new \DateTime("-1 day")){
+        if($expiresAt < new \DateTime("+1 month") && $expiresAt > new \DateTime("+1 day")){
             return "za ". $expiresAt->diff(new \DateTime())->days . " dni";
         }
 
-        return "za " . $expiresAt->format("H") . "godz. " . $expiresAt->format("i") . " min.";
+        if($expiresAt < new \DateTime("+1 day")){
+            return "za " . $expiresAt->format("H") . "godz. " . $expiresAt->format("i") . " min.";
+        }
+
     }
 
     /**
@@ -50,7 +53,7 @@ class DateExtensions extends Twig_Extension
      */
     public function styleAuction(\DateTime $expiresAt){
 
-        if($expiresAt < new \DateTime("-1 day")){
+        if($expiresAt < new \DateTime("+1 day")){
             return "panel-danger";
         }
         else{
