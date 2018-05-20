@@ -9,6 +9,8 @@
             <!-- Default panel contents -->
             <div class="panel-heading"><h2><a href="{{ url('auction_details', {"id": auction.id}) }}">{{ auction.title }}</a></h2></div>
             <div class="panel-body">
+                <h3>Wystawione przez użytkownika: <b>{{ auction.owner | upper}}</b></h3>
+                </br>
                 <h4>{{ auction.description }}</h4>
             </div>
 

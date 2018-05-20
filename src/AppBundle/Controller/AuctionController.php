@@ -15,7 +15,7 @@ use AppBundle\Entity\Auction;
 class AuctionController extends Controller
 {
     /**
-     * @Route("/" , name="auction_index")
+     * @Route("/home" , name="auction_index")
      *
      * @return Response
      */

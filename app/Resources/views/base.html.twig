@@ -46,6 +46,29 @@
         </div>
 
     </div>
-    {% block javascripts %}{% endblock %}
+    {% block javascripts %}
+        <script src="{{ asset('vendor/jquery/dist/jquery.min.js') }}"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+
+                // Get current page URL
+                var url = window.location.href;
+
+                // Loop all menu items
+                $('.top-nav').each(function(){
+
+                    // select href
+                    var href = $(this).find('a').attr('href');
+                    console.log(href , url);
+                    // Check filename
+                    if(url == href){
+
+                        // Add active class
+                        $(this).addClass('active');
+                    }
+                });
+            });
+        </script>
+    {% endblock %}
     </body>
 </html>
